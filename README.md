@@ -1,0 +1,1 @@
+Project Description: Website where companies can store inventory of their products via a database. The website acts as the front end for customers can view the goods availability and pricing. There will also be a search and filter option for more user-friendly interface.

@@ -1,13 +1,12 @@
 <?php
-include 'db.php'; // Include the database connection
+require 'db.php'; // Ensure this file correctly connects to MySQL
 
-// Fetch all products
-$sql = "SELECT * FROM products";
-$result = $conn->query($sql);
+$stmt = $conn->prepare("SELECT * FROM products");
+$stmt->execute();
 
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. " - Quantity: " . $row["quantity"]. "<br>";
+if ($stmt->rowCount() > 0) { 
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo "Product Name: " . htmlspecialchars($row["product_name"]) . "<br>";
     }
 } else {
     echo "No products found";

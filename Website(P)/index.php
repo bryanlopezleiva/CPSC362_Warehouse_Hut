@@ -35,14 +35,14 @@
 
     <div class="container">
         <div class="box1">
-            <a href="company.php">
+            <a href="create_account.php">
                 <h1>Create an Account</h1>
             </a>
 
         </div>
 
         <div class="box2">
-            <a href="buyer.php">
+            <a href="company_login.php">
                 <h1>Log In</h1>
             </a>
         </div>

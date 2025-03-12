@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // Include database connection
+include '../../php-inventory/db.php'; // Include database connection
 
 try {
     // Fetch all products

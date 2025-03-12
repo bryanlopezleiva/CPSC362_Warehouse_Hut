@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // Include the database connection
+include '../../php-inventory/db.php'; // Include the database connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve input values safely

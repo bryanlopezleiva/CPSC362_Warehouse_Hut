@@ -6,47 +6,31 @@
     <title>Home</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    
+    <?php include 'navbar.php'; ?>  <!-- Include the navbar -->
+  <section id="about-section">
+    <h2>Hey World, Welcome to Warehouse Hut!!!</h2>
+      <div class = "bio">
+        <p>
+          Hello Everyone, This is a website that can help you in keeping track of the inventory 
+          of a company you shop at. You're presented the availability and price of a product 
+          you search for in our search box. :)  
+        </p>
+        <br>
+        <p>
+            Now, If you are a company using our system, we would like you to either create 
+            an account if new or simply log in to you're existing account. :D</p>
+      </div>
 
-<div id="topManu">
-      <a href="">Home</a>
-      <a href ="products.php">Dashboard</a>
-      <a href ="MySQL_Queries/view_products.php">Products</a>
-      <a href="">Contact us</a> 
-  
-
-      <div class="search">
-         <form action="3">
-            <input type="text" placeholder="Search" name="search">
-            <button>
-                <i class="fa fa-search"></i>
-            </button>
-         </form>
-       </div>
- </div>
-
-    <div class="header">
-        <h1>Warehouse Hut</h1>
-		Begin Searching as a customer!<br><br>
-		If a business:
-		Create an Account or Log in!
-    </div>
-
-    <div class="container">
-        <div class="box1">
-            <a href="create_account.php">
-                <h1>Create an Account</h1>
-            </a>
-
-        </div>
-
-        <div class="box2">
-            <a href="company_login.php">
-                <h1>Log In</h1>
-            </a>
-        </div>
-    </div>
-    
+      <div class="credentials">
+        <a href="create_account.php">
+         <p>Create an Account</p>
+        </a>
+        <a href = "company_login.php">
+          <p>Log In</p>
+        </a>
+      </div>
+  </section>
 </body>
 </html>

@@ -3,54 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .container {
-            width: 20%;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-            margin: 5px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            border-radius: 5px;
-        }
-        a:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="products.css">
 </head>
 <body>
 
+
 <header>
-    <h1>Inventory Management System</h1>
+    <h1>Inventory Management Dashboard</h1>
 </header>
 
-<div class="container">
-    <h2>Welcome to the Inventory System</h2>
-    <p>Manage your products and track inventory with ease.</p>
+<?php include 'navbar.php'; ?> <!-- Include the navbar -->
 
-    <a href="MySQL_Queries/create_product.php">Add New Product</a>
-    <a href="MySQL_Queries/view_products.php">View Products</a>
+<div class="container">
+    <h2>Welcome to the Inventory Dashboard</h2>
+    <p>Manage your products, view inventory, and add new items.</p>
+
+    <!-- Button to add a new product -->
+    <a href="MySQL_Queries/create_product.php">
+        <button>
+            Add New Product
+        </button>
+    </a>
+
+    <!-- Link to view existing products -->
+    <a href="MySQL_Queries/view_products.php">
+        <button>
+            View Products
+        </button>
+    </a>
 </div>
 
 </body>
 </html>
-

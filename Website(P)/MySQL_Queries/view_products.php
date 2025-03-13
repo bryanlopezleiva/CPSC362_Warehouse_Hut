@@ -1,6 +1,5 @@
 <?php
 include '../../php-inventory/db.php'; // Include database connection
-
 try {
     // Fetch all products
     $stmt = $conn->prepare("SELECT productName, productType, productPrice, stockDate, stockQuantity, areaSourced, companyID FROM products");

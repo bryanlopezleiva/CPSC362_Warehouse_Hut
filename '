@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
 }
 
 html {
@@ -10,12 +9,14 @@ html {
 }
 
 body {
-  align-items: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   background-color: #f4f4f4;
 }
 
 #topManu {
-  background-color: #bfd6c4;
+  background-color: gray;
   overflow: hidden;
   padding: 10px 0;
   display: flex;
@@ -33,7 +34,7 @@ body {
 }
 
 #topManu a:hover {
-  background-color: #93a396;
+  background-color: rgb(113, 106, 97);
   color: white;
   transition: color 0.3s ease-in-out;
 }
@@ -67,47 +68,29 @@ body {
 }
 
 .search button:hover {
-  background-color: #93a396;
+  background: darkgreen;
   color: white;
   transition: color 0.3s ease-in-out;
 }
 
-#about-section {
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 2rem;
+.container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.box1 {
   text-align: center;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(113, 106, 97);
 }
 
-#about-section .bio {
-  margin-bottom: 2rem;
-  padding: 0 2rem;
-  max-width: 56.25rem;
-}
-
-#about-section .bio p {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-#about-section .credentials {
-  font-size: 2.25rem;
-  display: flex;
-}
-
-#about-section .credentials a {
-  padding: 10px;
-  margin: 0 0.75rem;
-  transition:
-    transition 0.3s,
-    color 0.3s;
-}
-
-#about-section .credentials a:hover {
-  color: #93a396;
-  transform: scale(1.2);
+.box2 {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #4caf50;
 }
 

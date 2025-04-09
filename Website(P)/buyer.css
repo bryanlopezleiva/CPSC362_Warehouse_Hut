@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+body{
+	background-image: url("depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
 .container{
     width: 100%;
     height: 50vh;
@@ -12,8 +18,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
-
 }
 
 form{
@@ -27,8 +31,6 @@ form input{
     border: none;
     outline: none;
     font-size: 20px;
-    
-
 }
 
 
@@ -102,6 +104,18 @@ form button{
     background-image: url(iphone.jpg);
     background-size: cover;
   }
+  
+    .box2{
+    flex: 1;
+    margin: 15px;
+    padding: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 90px;
+    border: 2px solid #ccc;
+    text-align: center;
+     background-image: url(home.jpg);
+    background-size: cover; 
+  } 
 
   .box3{
     flex: 1;
@@ -115,18 +129,6 @@ form button{
     background-image: url(goods.webp);
     background-size: cover; 
   }
-
-  .box2{
-    flex: 1;
-    margin: 15px;
-    padding: 40px;
-    margin-bottom: 50px;
-    padding-bottom: 90px;
-    border: 2px solid #ccc;
-    text-align: center;
-     background-image: url(home.jpg);
-    background-size: cover; 
-  } 
 
   
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuyerPage</title>
+    <title>Customer Page</title>
     <link rel="stylesheet" href="buyer.css">
 </head>
 <body>
@@ -11,11 +11,12 @@
 
     <!-- Top Navigation Menu -->
     <div class="topnav">
-    <a href="#home" class="active"> <b>Buyers page</b></a>
+    <a href="#home" class="active"> <b>Welcome Customer!</b></a>
     <div id="myLinks">
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a href="#News">News</a>
+        <a href="#Contact">Contact</a>
+        <a href="#About">About</a>
+		<a href="index.php">Return</a>
     </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>

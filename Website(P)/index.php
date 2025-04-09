@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="index.css">
     <style>
         body {
-			font-family: Arial, sans-serif;
+			font-family: Times New Roman, sans-serif;
+			text-align: center;
+			font-weight: bold;
+			font-size: 24px; 
 			margin: 0;
 			padding: 0;
             background-image: url("depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-        }
     </style>
 </head>
 <body>

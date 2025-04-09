@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="create_account.css">
-    <title>Document</title>
+    <title>Create Account</title>
 </head>
+<style>
+        body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+            background-image: url("depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 <body>
     <div class="main">
-        <h2>Registration Form</h2>
+        <h2>Create Account</h2>
         <form action="">
             <label for="company_name">Company Name:</label>
             <input type="text" id="company_name" name="company_name" required />
@@ -46,6 +57,10 @@
                 Submit
             </button>
         </form>
+		
+		<p> <a href="index.php">
+                Return
+            </a>
     </div>
     
 </body>

@@ -9,6 +9,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+			background-image: url("depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
 
         }
         header {
@@ -18,7 +22,7 @@
             text-align: center;
         }
         .container {
-            width: 60%;
+            width: 40%;
             margin: 20px auto;
             background-color: white;
             padding: 20px;
@@ -42,7 +46,7 @@
 <body>
 
 <header>
-    <h1>Inventory Management System</h1>
+    <h1>Product Dashboard</h1>
 </header>
 
 <div class="container">
@@ -51,6 +55,7 @@
 
     <a href="MySQL_Queries/create_product.php">Add New Product</a>
     <a href="MySQL_Queries/view_products.php">View Products</a>
+	<a href="index.php">Return</a>
 </div>
 
 </body>

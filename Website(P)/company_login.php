@@ -5,13 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="company_login.css">
     <title>Company Log-in</title>
+	
+	<script>
+        function redirect() {
+            window.location.href = "products.php";
+        }
+    </script>
 </head>
+    <style>
+        body {
+			margin: 0;
+			padding: 0;
+            background-image: url("depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 <body>
     <div class="main">
         <h1>Warehouse Hut</h1>
         <h3>Enter your credentials</h3>
 
-        <from action="">
+        <form action="">
             <label for="first">
                 Company Name:
             </label>
@@ -26,11 +42,11 @@
              placeholder="Enter your password" required>
 
              <div class="wrap">
-                <button type="submit">
-                    Submit
+                <button type="button" onclick="redirect()">
+                    Login
                 </button>
              </div>
-        </from>
+        </form>
 
         <p>Not Registered?
             <a href="create_account.php">

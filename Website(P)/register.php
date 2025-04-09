@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="company_login.css">
-    <title>Company Log-in</title>
+    <link rel="stylesheet" href="register.css">
+    <title>Document</title>
 </head>
 <body>
     <div class="main">
-        <h1>Warehouse Hut</h1>
-        <h3>Enter your credentials</h3>
+        <h1>Warehouse hut</h1>
+        <h3>Enter your login</h3>
 
         <from action="">
             <label for="first">
-                Company Name:
+                Username:
             </label>
             <input type="text" id="first" name="first"
                placeholder="Enter your Unsername" required>
@@ -33,7 +33,7 @@
         </from>
 
         <p>Not Registered?
-            <a href="create_account.php">
+            <a href="company.php">
                 Create an account
             </a>
         </p>

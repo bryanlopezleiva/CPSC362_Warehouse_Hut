@@ -1,113 +1,70 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
-}
-
-body {
-  align-items: center;
-  background-color: #f4f4f4;
-}
-
 #topManu {
-  background-color: #bfd6c4;
-  overflow: hidden;
-  padding: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+    background-color: gray;
+    overflow: hidden;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #topManu a {
-  color: black;
-  padding: 15px 20px;
-  text-decoration: none;
-  text-align: center;
-  transition: color 0.3s ease-in-out;
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
 }
 
 #topManu a:hover {
-  background-color: #93a396;
-  color: white;
-  transition: color 0.3s ease-in-out;
+    background-color: rgb(113, 106, 97);
+    color: white;
 }
-
 .search {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-
 .search input[type="text"] {
-  padding: 6px;
-  margin-right: 10px;
-  border: none;
-  font-size: 17px;
-  border-radius: 4px;
+    padding: 6px;
+    margin-right: 10px;
+    border: none;
+    font-size: 17px;
+    border-radius: 4px;
 }
-
 .search button {
-  padding: 6px 10px;
-  background: white;
-  color: gray;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
+    padding: 6px 10px;
+    background: white;
+    color: gray;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
 }
-
 .search button i {
-  font-size: 18px;
+    font-size: 18px;
 }
-
 .search button:hover {
-  background-color: #93a396;
-  color: white;
-  transition: color 0.3s ease-in-out;
+    background: darkgreen;
+    color: white;
 }
-
-#about-section {
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 2rem;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  gap: 0.5rem;
+.container {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
 }
-
-#about-section .bio {
-  margin-bottom: 2rem;
-  padding: 0 2rem;
-  max-width: 56.25rem;
+.box1 {
+    align-items: center;
+    height: 100px;
+    margin: 100px;
+    width: 150px;
+    padding: 50px;
+    background-color: gray;
 }
-
-#about-section .bio p {
-  font-size: 1.25rem;
-  font-weight: 300;
+.box2 {
+    align-items: center;
+    margin: 100px;
+    height: 100px;
+    padding: 50px;
+    width: 150px;
+    background-color: gray;
 }
-
-#about-section .credentials {
-  font-size: 2.25rem;
-  display: flex;
-}
-
-#about-section .credentials a {
-  padding: 10px;
-  margin: 0 0.75rem;
-  transition:
-    transition 0.3s,
-    color 0.3s;
-}
-
-#about-section .credentials a:hover {
-  color: #93a396;
-  transform: scale(1.2);
-}
-

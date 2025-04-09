@@ -1,5 +1,5 @@
 <?php
-require 'db.php'; // Include the database connection
+require '../db.php'; // Include the database connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
@@ -8,10 +8,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantity = $_POST['quantity'];
     $stockDate = $_POST['stockDate'];
     $areaSourced = $_POST['areaSourced'];
-	
-	// Insert into the products table
-    $sql = "INSERT INTO products (productName, productType, productPrice, stockDate, stockQuantity, areaSourced) 
-            VALUES ('$name', '$type', '$price', '$stockDate', '$quantity', '$areaSourced')";
+
+    // Debugging: Output the received values
+    /*echo "Received values: Name: $name, Type: $type, Price: $price, Quantity: $quantity, Stock Date: $stockDate, Area Sourced: $areaSourced<br>";*/
+
+    // Insert into the products table using PDO
+    try {
+        $stmt = $conn->prepare("INSERT INTO products (productName, productType, productPrice, stockDate, stockQuantity, areaSourced) VALUES (:name, :type, :price, :stockDate, :quantity, :areaSourced)");
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':stockDate', $stockDate);
+        $stmt->bindParam(':quantity', $quantity);
+        $stmt->bindParam(':areaSourced', $areaSourced);
+
+        if ($stmt->execute()) {
+            echo "New product created successfully!";
+        } else {
+            echo "Error executing query.";
+        }
+    } catch (PDOException $e) {
+        echo "Error: ". $e->getMessage();
+    }
+
+    // Close the connection
+    $conn = null;
 }
 ?>
 
@@ -21,12 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
-	<script>
-        function redirect() {
-            window.location.href = "products.php";
-        }
-    </script>
-	
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,12 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             align-items: center;
             height: 100vh;
             margin: 0;
-			background-image: url("../depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
+            background-image: url("../depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-        }
-		.container {
+        }.container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -80,27 +94,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <form method="POST">
             <label for="name">Product Name:</label>
-            <input type="text" id="name" name="name" required><br>
+            <input type="text" name="name" required><br>
 
             <label for="type">Product Type:</label>
-            <input type="text" id="type" name="type" required><br>
+            <input type="text" name="type" required><br>
 
             <label for="price">Total Price:</label>
-            <input type="number" id="price" name="price" required><br>
+            <input type="number" name="price" required><br>
 
             <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" required><br>
+            <input type="number" name="quantity" required><br>
 
             <label for="stockDate">Stock Date:</label>
-            <input type="date" id="stockDate" name="stockDate" required><br>
+            <input type="date" name="stockDate" required><br>
 
             <label for="areaSourced">Area Sourced:</label>
-            <input type="text" id="areaSourced" name="areaSourced" required><br>
+            <input type="text" name="areaSourced" required><br>
 
             <button type="submit">Add Product</button>
         </form>
-		<a href="view_products.php">
-			<h1>View Products</h1>
+        <a href="view_products.php">
+            <h1>View Products</h1>
+        </a>
     </div>
 </body>
 </html>

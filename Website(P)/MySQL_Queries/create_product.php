@@ -1,3 +1,20 @@
+<?php
+require 'db.php'; // Include the database connection
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $type = $_POST['type'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
+    $stockDate = $_POST['stockDate'];
+    $areaSourced = $_POST['areaSourced'];
+	
+	// Insert into the products table
+    $sql = "INSERT INTO products (productName, productType, productPrice, stockDate, stockQuantity, areaSourced) 
+            VALUES ('$name', '$type', '$price', '$stockDate', '$quantity', '$areaSourced')";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +85,7 @@
             <label for="type">Product Type:</label>
             <input type="text" id="type" name="type" required><br>
 
-            <label for="price">Price:</label>
+            <label for="price">Total Price:</label>
             <input type="number" id="price" name="price" required><br>
 
             <label for="quantity">Quantity:</label>
@@ -82,8 +99,8 @@
 
             <button type="submit">Add Product</button>
         </form>
-		<a href="../products.php">
-			<h1>Return</h1>
+		<a href="view_products.php">
+			<h1>View Products</h1>
     </div>
 </body>
 </html>

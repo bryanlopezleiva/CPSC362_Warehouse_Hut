@@ -1,3 +1,5 @@
+@import url('https://fonts.google.com/specimen/Poppins?preview.text=Where');
+
 *{
     margin: 0;
     padding: 0;
@@ -16,6 +18,141 @@
 
 }
 
+/* check box */
+.menu{
+  display: none;
+  visibility: hidden;
+  -webkit-appearance: none;
+}
+
+.toggle{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 20px;
+  left: 15px;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
+/* three lines for the manu page */
+.toggle .common{
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: #8000ff;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.toggle .top_line{
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.toggle .middle_line{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.toggle .bottom_line{
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+input:checked ~ .toggle .top_line{
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(45deg);
+}
+
+input:checked ~ .toggle .bottom_line{
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(-45deg);
+}
+
+input:checked ~ .toggle .middle_line{
+  opacity: 0;
+  transform: translate(20px);
+}
+
+input:checked ~ .slide{
+  transform: translateX(0);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
+/*  Manu bar */
+
+.manu{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+
+.slide{
+  height: 100%;
+  width: 250px;
+  position: absolute;
+  background-color: #ffffff;
+  transition: 0.5s ease;
+  transform: translateX(-250px);
+}
+
+h1{
+  color: blue;
+  font-weight: 800;
+  text-align: right;
+  padding: 10px 0;
+  padding-right: 30px;
+  pointer-events: none;
+}
+
+ul li{
+  list-style: none;
+}
+
+ul li a{
+  color: black;
+  font-weight: 500;
+  padding: 10px 0;
+  display: block;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+
+ul li:hover a{
+  color: black;
+  background-color: antiquewhite;
+
+}
+
+ul li a i{
+  width: 80px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* Botton */
 form{
     width: 600px;
     height: 70px;
@@ -45,90 +182,59 @@ form button{
 
 
 
+/* Boxes */
+html {
+  box-sizing: border-box;
+}
 
-/* Top Navigation Menu */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-    position: relative;
-  }
-  
-  .topnav #myLinks {
-    display: none;
-  }
-  
-  .topnav a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 30px;
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
     display: block;
   }
-  
-  .topnav a.icon {
-    background: black;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .active {
-    background-color: gray;
-    color: white;
-  }
+}
 
-  /* Boxes */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
-  .boxes{
-    display: flex;
-   
-  }
+.container {
+  padding: 0 16px;
+}
 
-   .box1{
-    flex: 1;
-    margin: 15px;
-    margin-bottom: 50px;
-    padding: 40px;
-    padding-bottom: 60px;
-    border: 2px solid #ccc;
-    text-align: center;
-    background-image: url(iphone.jpg);
-    background-size: cover;
-  }
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
-  .box3{
-    flex: 1;
-    margin: 15px;
-    padding: 40px;
-    margin-bottom: 50px;
-    padding-bottom: 90px;
-    border: 2px solid #ccc;
-    text-align: center;
-    background-color:antiquewhite;
-    background-image: url(goods.webp);
-    background-size: cover; 
-  }
+.title {
+  color: grey;
+}
 
-  .box2{
-    flex: 1;
-    margin: 15px;
-    padding: 40px;
-    margin-bottom: 50px;
-    padding-bottom: 90px;
-    border: 2px solid #ccc;
-    text-align: center;
-     background-image: url(home.jpg);
-    background-size: cover; 
-  } 
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
 
-  
-
-
-
+.button:hover {
+  background-color: #555;
+}

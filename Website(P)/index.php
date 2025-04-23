@@ -11,9 +11,10 @@
 			text-align: center;
 			font-weight: bold;
 			font-size: 24px; 
+			color: white;
 			margin: 0;
 			padding: 0;
-            background-image: url("depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
+            background-image: url("Images/Warehouse.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;

@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url("../depositphotos_648417408-stock-illustration-room-warehouse-concept-large-room.jpg");
+            background-image: url("../Images/Warehouse3.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;

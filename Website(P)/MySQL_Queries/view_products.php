@@ -1,5 +1,5 @@
 <?php
-require '../db.php'; // Ensure this file correctly connects to MySQL
+require '../../php-inventory/db.php'; // Ensure this file correctly connects to MySQL
 
 $stmt = $conn->prepare("SELECT * FROM products");
 $stmt->execute();
@@ -20,14 +20,14 @@ $stmt->execute();
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            margin: 150px;
 			background-image: url("../Images/Warehouse3.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }.container {
             background-color: #fff;
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 400px;

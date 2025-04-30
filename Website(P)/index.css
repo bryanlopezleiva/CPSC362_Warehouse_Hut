@@ -1,60 +1,68 @@
 /* Top Navigation Menu */
 #topManu {
-    background-color: gray;
-    overflow: hidden;
-    padding: 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+  background-color: gray;
+  overflow: hidden;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #topManu a {
-    color: blue;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
+  color: blue;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
 }
 
 #topManu a:hover {
-    background-color: rgb(113, 106, 97);
-    color: white;
+  background-color: rgb(113, 106, 97);
+  color: white;
 }
 
-/* Search Container */.search {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}.search input[type="text"] {
-    padding: 6px;
-    margin-right: 10px;
-    border: none;
-    font-size: 17px;
-    border-radius: 4px;
-}.search button {
-    padding: 6px 10px;
-    background: white;
-    color: gray;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}.search button i {
-    font-size: 18px;
-}.search button:hover {
-    background: darkgreen;
-    color: white;
+/* Search Container */
+.search {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-/* Container for Boxes */.container {
-    display: flex;
-    justify-content: center;
-    column-gap: 20px;
+.search input[type="text"] {
+  padding: 6px;
+  margin-right: 10px;
+  border: none;
+  font-size: 17px;
+  border-radius: 4px;
+}
+.search button {
+  padding: 6px 10px;
+  background: white;
+  color: gray;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.search button i {
+  font-size: 18px;
+}
+.search button:hover {
+  background: darkgreen;
+  color: white;
+}
+/* Container for Boxes */
+.container {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
 }
 
-/* Box Styles */.box1,.box2 {
-    align-items: center;
-    height: 100px;
-    margin: 100px;
-    width: 150px;
-    padding: 50px;
+/* Box Styles */
+.box1,
+.box2 {
+  align-items: center;
+  height: 100px;
+  margin: 100px;
+  width: 150px;
+  padding: 50px;
 }

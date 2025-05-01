@@ -1,5 +1,5 @@
 <?php
-require '../db.php'; // Ensure this file correctly connects to MySQL
+require '../../php-inventory/db.php'; // Ensure this file correctly connects to MySQL
 
 $stmt = $conn->prepare("SELECT * FROM products");
 $stmt->execute();

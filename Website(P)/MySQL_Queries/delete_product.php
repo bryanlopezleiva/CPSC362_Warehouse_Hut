@@ -1,5 +1,5 @@
 <?php
-require '../db.php'; // Ensure the correct relative path is used
+require '../../php-inventory/db.php'; // Ensure the correct relative path is used
 
 $sql = "DELETE FROM products where
             VALUES ('$name', '$type', '$price', '$stockDate', '$quantity', '$areaSourced')";

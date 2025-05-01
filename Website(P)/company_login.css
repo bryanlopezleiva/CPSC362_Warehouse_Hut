@@ -5,8 +5,13 @@ body{
     line-height: 1.5;
     min-height: 100vh;
     flex-direction: column;
-    background: #f3f3f3;
     margin: 0;
+	padding: 0;
+    background-image: url("Images/Warehouse2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+	background-position: center;
 
 }
 

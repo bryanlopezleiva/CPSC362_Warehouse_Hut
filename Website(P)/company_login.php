@@ -12,16 +12,7 @@
         }
     </script>
 </head>
-    <style>
-        body {
-			margin: 0;
-			padding: 0;
-            background-image: url("Images/Warehouse2.jpg");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-    </style>
+
 <body>
     <div class="main">
         <h1>Warehouse Hut</h1>

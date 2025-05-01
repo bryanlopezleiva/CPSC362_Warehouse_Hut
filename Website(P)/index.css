@@ -1,68 +1,40 @@
-/* Top Navigation Menu */
-#topManu {
-  background-color: gray;
-  overflow: hidden;
-  padding: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#topManu a {
-  color: blue;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-#topManu a:hover {
-  background-color: rgb(113, 106, 97);
-  color: white;
-}
-
-/* Search Container */
-.search {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.search input[type="text"] {
-  padding: 6px;
-  margin-right: 10px;
-  border: none;
-  font-size: 17px;
-  border-radius: 4px;
-}
-.search button {
-  padding: 6px 10px;
-  background: white;
-  color: gray;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-.search button i {
-  font-size: 18px;
-}
-.search button:hover {
-  background: darkgreen;
-  color: white;
-}
-/* Container for Boxes */
-.container {
-  display: flex;
-  justify-content: center;
-  column-gap: 20px;
-}
-
-/* Box Styles */
-.box1,
-.box2 {
-  align-items: center;
-  height: 100px;
-  margin: 100px;
-  width: 150px;
-  padding: 50px;
+body {
+    font-family: Times New Roman, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background-image: url("Images/Warehouse.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+	background-position: center;
+}.header {
+    margin: 20px 0; /* Optional: Adds spacing around the header */
+}.container {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}.box1,.box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 150px;
+    padding: 10px 20px;
+    background-color: transparent;
+    cursor: pointer;
+}.box1 button,.box2 button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px; 
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}.box1 button:hover,.box2 button:hover {
+    background-color: #45a049; /* Darker green on hover */
 }

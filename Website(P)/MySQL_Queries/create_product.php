@@ -1,5 +1,5 @@
 <?php
-require '../../php-inventory/db.php'; // Include the database connection
+require '../db.php'; // Include the database connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
@@ -61,7 +61,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+			text-align: center;
         }
+		
+		label {
+			display: block;
+			margin-bottom: 2px;
+			padding: 4px 0;
+			font-weight: bold;
+		}
 
         input[type="text"],
         input[type="number"],
@@ -97,7 +105,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="name" required><br>
 
             <label for="type">Product Type:</label>
-            <input type="text" name="type" required><br>
+            <select name="type" required>
+                <option value="Electronics">Electronics</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Tools">Tools</option>
+            </select><br>
 
             <label for="price">Total Price:</label>
             <input type="number" name="price" required><br>

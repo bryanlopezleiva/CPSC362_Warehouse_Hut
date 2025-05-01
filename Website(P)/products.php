@@ -13,6 +13,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+			background-position: center;
 
         }
         header {
@@ -31,6 +32,7 @@
 			justify-content: center;
         }
         a {
+			display: inline-block;
             text-decoration: none;
             color: #333;
             margin: 5px;
@@ -54,6 +56,8 @@
     <p>Manage your products and track inventory with ease.</p>
 
     <a href="MySQL_Queries/create_product.php">Add New Product</a>
+	<a href="MySQL_Queries/create_product.php">Delete Product</a>
+	<a href="MySQL_Queries/create_product.php">Update Product</a>
     <a href="MySQL_Queries/view_products.php">View Products</a>
 	<a href="index.php">Return</a>
 </div>

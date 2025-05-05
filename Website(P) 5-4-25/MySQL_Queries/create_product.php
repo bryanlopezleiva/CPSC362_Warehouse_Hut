@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':areaSourced', $areaSourced);
 
         if ($stmt->execute()) {
-            echo "New product created successfully!";
+            echo '<script>alert("New product created successfully!")</script>';
         } else {
             echo "Error executing query.";
         }
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            margin: 5%;
             background-image: url("../Images/Warehouse3.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -91,6 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+			margin-bottom: 5%;
         }
 
         button:hover {
@@ -127,9 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <button type="submit">Add Product</button>
         </form>
-        <a href="view_products.php">
-            <h1>View Products</h1>
-        </a>
+        <button onclick="window.location.href='../products.php'">Go Back</button>
     </div>
 </body>
 </html>

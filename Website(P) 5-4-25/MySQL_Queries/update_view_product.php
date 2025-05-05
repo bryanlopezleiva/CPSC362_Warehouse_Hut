@@ -23,20 +23,20 @@ $stmt->execute();
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            margin: 10%;
             background-image: url("../Images/Warehouse3.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
+			align-items: center;
         }.container {
             background-color: #fff;
-            padding: 20px;
+            padding: 10px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            text-align: left;
+            width: 300px;
+            text-align: center;
         }
         h2 {
             text-align: center;
@@ -47,10 +47,10 @@ $stmt->execute();
         }.actions {
             margin-top: 10px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; 
         }
         button {
-            padding: 5px 10px;
+            padding: px 10px;
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -69,37 +69,25 @@ $stmt->execute();
         if ($stmt->rowCount() > 0) {
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='product'>".
-                     htmlspecialchars($row["stockQuantity"]). " ". htmlspecialchars($row["productName"]). "<br>". " Total Cost: $ ". 
-                     htmlspecialchars($row["productPrice"]). "<br>". " From: ". htmlspecialchars($row["areaSourced"]).
-                     "<div class='actions'>".
-                     "<button onclick='updateProduct(".htmlspecialchars($row["productsID"]).")'>Update</button>".
-                     "<button onclick='deleteProduct(".htmlspecialchars($row["productsID"]).")'>Delete</button>".
-                     "</div>".
-                     "</div>";
-            }
+     htmlspecialchars($row["stockQuantity"]). " ". htmlspecialchars($row["productName"]). "<br>".
+     "Product Type: ". htmlspecialchars($row["productType"]). "<br>". // Added Product Type
+     "Total Cost: $ ". htmlspecialchars($row["productPrice"]). "<br>".
+     "From: ". htmlspecialchars($row["areaSourced"]).
+     "<div class='actions'>".
+     "<button onclick='updateProduct(".htmlspecialchars($row["productsID"]).")'>Update</button>".
+     "</div>".
+     "</div>";
+            }			
         } else {
-            echo "<p>No products found</p>";
+            echo '<script>alert("No products found!")</script>';
         }
         ?>
-        <a href="../products.php">
-            <h1>Return</h1>
-        </a>
+        <button onclick="window.location.href='../products.php'">Go Back</button>
     </div>
 
-    <script>
+    <script> // refreshes form
         function updateProduct(productsID) {
-            window.location.href = `update_view_product.php?productsID=${productsID}`;
-        }
-
-        function deleteProduct(productsID) {
-            if (confirm('Are you sure you want to delete this product?')) {
-                fetch(`delete_product.php?id=${productsID}`, {
-                    method: 'POST'
-                }).then(response => response.text()).then(data => {
-                    alert(data);
-                    location.reload(); // Reload the page to reflect changes
-                }).catch(error => console.error('Error:', error));
-            }
+            window.location.href = `update_form.php?productsID=${productsID}`;
         }
     </script>
 </body>

@@ -237,8 +237,8 @@ html {
 
 /* Results Container */.results {
 	margin-top: 20px; /* Adds spacing top of the results */
-    margin-left: 700px; /* Adds spacing left of the results */
-	margin-right: 700px; /* Adds spacing right of the results */
+    margin-left: 30%; /* Adds spacing left of the results */
+	margin-right: 30%; /* Adds spacing right of the results */
 	margin-bottom: 20px; /* Adds spacing bottom of the results */
     padding: 10px; /* Adds padding within the results container */
     border: 1px solid #ccc; /* Adds a border around the results */

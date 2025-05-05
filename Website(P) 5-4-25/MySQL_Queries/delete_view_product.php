@@ -23,8 +23,8 @@ $stmt->execute();
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 300px;
+            
+            margin: 10%;
             background-image: url("../Images/Warehouse3.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -35,7 +35,7 @@ $stmt->execute();
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
+            width: 300px;
             text-align: center;
         }
         h2 {
@@ -79,8 +79,7 @@ $stmt->execute();
             echo "<p>No products found</p>";
         }
         ?>
-        <a href="../products.php">
-            <h1>Return</h1>
+        <button onclick="window.location.href='../products.php'">Go Back</button>
         </a>
     </div>
 

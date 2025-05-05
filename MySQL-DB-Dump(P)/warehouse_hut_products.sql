@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
 -- Host: localhost    Database: warehouse_hut
 -- ------------------------------------------------------
--- Server version	8.0.39
+-- Server version	8.0.40
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -34,7 +34,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`productsID`),
   KEY `companyID` (`companyID`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`companyID`) REFERENCES `company` (`companyID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (6,'Pear','Fruit',2,'2025-03-25',2,'Walmart',NULL),(7,'Mountain Dew','Drink',5,'2025-03-12',10,'Walmart',NULL),(8,'Bacon','Food',7,'2025-03-12',8,'Walmart',NULL),(9,'Chicken Breast','Food',12,'2025-03-12',7,'Walmart',NULL),(10,'Gloves','Clothing',10,'2025-04-08',2,'Target',NULL),(11,'Grapes','Fruit',10,'2025-04-08',2,'Aldi',NULL),(12,'Coca Cola','Drink',5,'2025-04-08',1,'Target',NULL),(13,'Hershey\'s Milk Chocolate','Candy',8,'2025-04-08',2,'Target',NULL),(15,'Lego: Mario Set','Toy',50,'2025-04-09',1,'Target',NULL),(17,'Samsung Television','Electronic',400,'2025-04-08',1,'Target',NULL),(19,'Nokia Lumia','Electronics',200,'2025-05-05',1,'Target',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-25 18:58:19
+-- Dump completed on 2025-05-05  1:19:45

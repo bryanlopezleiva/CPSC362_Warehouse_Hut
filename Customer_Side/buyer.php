@@ -22,10 +22,8 @@
         <div class="slide">
             <h1>Customer's Page</h1>
             <ul>
-                <!--<li><a href="#"><i class="far fa-user"></i>user</a></li>-->
-                <!--<li><a href="#"><i class="fas fa-tv"></i>Dashboard</a></li>-->
                 <li><a href="contact.php"><i class="fas fa-phone"></i>Contact</a></li>
-                <li><a href="index.php"><i class="fa fa-home"></i>Return</a></li> 
+                <li><a href="../index.php"><i class="fa fa-home"></i>Home</a></li> 
             </ul>
         </div>
     </label>
@@ -44,7 +42,7 @@
     <!-- Images -->
     <div class="column">
         <div class="card">
-            <img src="images/iphone.jpg" alt="Electronics" style="width:40%;">
+            <img src="../Images/iphone.jpg" alt="Electronics" style="width:40%;">
             <h2>Electronics</h2>
             <p class="title">Brand names</p>
             <p><button class="button select-button" data-type="Electronics">Select</button></p>
@@ -53,7 +51,7 @@
     
     <div class="column">
         <div class="card">
-            <img src="images/goods.webp" alt="Electronics" style="width:40%">
+            <img src="../Images/goods.webp" alt="Electronics" style="width:40%">
             <h2>Groceries</h2>
             <p class="title">Food</p>
             <p><button class="button select-button" data-type="Groceries">Select</button></p>
@@ -62,7 +60,7 @@
     
     <div class="column">
         <div class="card">
-            <img src="images/home.jpg" alt="Electronics" style="width:40%">
+            <img src="../Images/home.jpg" alt="Electronics" style="width:40%">
             <h2>Housing</h2>
             <p class="title">Furniture</p>
             <p><button class="button select-button" data-type="Furniture">Select</button></p>
@@ -87,7 +85,7 @@
         });
 
         function performSearch(query) {
-            fetch(`MySQL_Queries/search_product.php?query=${encodeURIComponent(query)}`).then(response => {
+            fetch(`../MySQL_Queries/search_product.php?query=${encodeURIComponent(query)}`).then(response => {
                 console.log("Response status:", response.status);
                 return response.text(); // Temporarily use text() to inspect the raw response
             }).then(text => {

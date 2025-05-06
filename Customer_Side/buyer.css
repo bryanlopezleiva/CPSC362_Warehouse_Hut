@@ -1,5 +1,5 @@
 body{
-	background-image: url("Images/Warehouse3.jpg");
+	background-image: url("../Images/Warehouse3.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -21,7 +21,7 @@ body{
     align-items: center;
     justify-content: center;
    
-}
+}text
 
 /* check box */
 .menu{

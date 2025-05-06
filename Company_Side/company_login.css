@@ -7,7 +7,7 @@ body{
     flex-direction: column;
     margin: 0;
 	padding: 0;
-    background-image: url("Images/Warehouse2.jpg");
+    background-image: url("../Images/Warehouse2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

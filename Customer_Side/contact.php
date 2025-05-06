@@ -1,3 +1,12 @@
+<?php
+require '../db.php'; // Include the database connection
+
+// Fetch company names and IDs from the database
+$stmt = $conn->prepare("SELECT companyID, companyName FROM company");
+$stmt->execute();
+$companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +25,24 @@
             <p><strong>Address:</strong> 1327 Sterling Way Ave, Fullerton, CA </p>
         </div>
 
-        <form action="send_contact.php" method="post">
+        <form action="../MySQL_Queries/contact_send.php" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
+
+            <!-- Dropdown menu for selecting company -->
+            <select name="companyID" required>
+                <option value="">Select Company</option>
+                <?php foreach ($companies as $company): ?>
+                    <option value="<?php echo htmlspecialchars($company['companyID']); ?>">
+                        <?php echo htmlspecialchars($company['companyName']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
-		<a href="buyer.php" class="back_button">Return</a>
+        <button onclick="window.location.href='buyer.php'">Go Back</button>
     </div>
 
 </body>

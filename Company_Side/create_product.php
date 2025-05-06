@@ -1,5 +1,6 @@
 <?php
 require '../db.php'; // Include the database connection
+session_start(); // Start the session to access companyID
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
@@ -7,28 +8,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
     $stockDate = $_POST['stockDate'];
-    $areaSourced = $_POST['areaSourced'];
 
-    // Debugging: Output the received values
-    /*echo "Received values: Name: $name, Type: $type, Price: $price, Quantity: $quantity, Stock Date: $stockDate, Area Sourced: $areaSourced<br>";*/
+    if (isset($_SESSION['companyID']) && isset($_SESSION['companyName'])) {
+        $companyID = $_SESSION['companyID'];
+        $areaSourced = $_SESSION['companyName']; // Use the company name from the session
 
-    // Insert into the products table using PDO
-    try {
-        $stmt = $conn->prepare("INSERT INTO products (productName, productType, productPrice, stockDate, stockQuantity, areaSourced) VALUES (:name, :type, :price, :stockDate, :quantity, :areaSourced)");
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':type', $type);
-        $stmt->bindParam(':price', $price);
-        $stmt->bindParam(':stockDate', $stockDate);
-        $stmt->bindParam(':quantity', $quantity);
-        $stmt->bindParam(':areaSourced', $areaSourced);
+        try {
+            // Insert into the products table using PDO
+            $stmt = $conn->prepare("INSERT INTO products (productName, productType, productPrice, stockDate, stockQuantity, areaSourced, companyID) VALUES (:name, :type, :price, :stockDate, :quantity, :areaSourced, :companyID)");
+            $stmt->bindParam(':name', $name);
+            $stmt->bindParam(':type', $type);
+            $stmt->bindParam(':price', $price);
+            $stmt->bindParam(':stockDate', $stockDate);
+            $stmt->bindParam(':quantity', $quantity);
+            $stmt->bindParam(':areaSourced', $areaSourced);
+            $stmt->bindParam(':companyID', $companyID);
 
-        if ($stmt->execute()) {
-            echo '<script>alert("New product created successfully!")</script>';
-        } else {
-            echo "Error executing query.";
+            if ($stmt->execute()) {
+                echo '<script>alert("New product created successfully!")</script>';
+            } else {
+                echo "Error executing query.";
+            }
+        } catch (PDOException $e) {
+            echo "Error: ". $e->getMessage();
         }
-    } catch (PDOException $e) {
-        echo "Error: ". $e->getMessage();
+    } else {
+        echo "No company logged in.";
     }
 
     // Close the connection
@@ -61,16 +66,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-			text-align: center;
+            text-align: center;
         }
-		
-		label {
-			display: block;
-			margin-bottom: 2px;
-			padding: 4px 0;
-			font-weight: bold;
-		}
-
+        label {
+            display: block;
+            margin-bottom: 2px;
+            padding: 4px 0;
+            font-weight: bold;
+        }
         input[type="text"],
         input[type="number"],
         input[type="date"] {
@@ -81,7 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 4px;
             box-sizing: border-box;
         }
-
         button {
             width: 100%;
             padding: 10px;
@@ -91,9 +93,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-			margin-bottom: 5%;
+            margin-bottom: 5%;
         }
-
         button:hover {
             background-color: #218838;
         }
@@ -123,12 +124,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="stockDate">Stock Date:</label>
             <input type="date" name="stockDate" required><br>
 
-            <label for="areaSourced">Area Sourced:</label>
-            <input type="text" name="areaSourced" required><br>
-
             <button type="submit">Add Product</button>
         </form>
-        <button onclick="window.location.href='../products.php'">Go Back</button>
+        <button onclick="window.location.href='company_dashboard.php'">Go Back</button>
     </div>
 </body>
 </html>

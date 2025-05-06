@@ -13,12 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$productName, $productType, $productPrice, $stockDate, $stockQuantity, $productID]);
 
     if ($stmt->rowCount() > 0) {
-        echo '<script>("Product updated successfully!");
-                window.location.href = "update_view_product.php";
+        echo '<script>
+                alert("Product updated successfully!");
+                window.location.href = "../Company_Side/update_view_product.php";
               </script>';
     } else {
-        echo '<script>("Error in updating product!");
-                window.location.href = "update_view_product.php";
+        echo '<script>
+                alert("Error in updating product!");
+                window.location.href = "../Company_Side/update_view_product.php";
               </script>';
     }
 }

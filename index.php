@@ -18,13 +18,13 @@
 
     <div class="container">
         <div class="box1">
-            <a href="company_login.php">
+            <a href="Company_Side/company_login.php">
                 <button>Company</button>
             </a>
         </div>
 
         <div class="box2">
-            <a href="buyer.php">
+            <a href="Customer_Side/buyer.php">
                 <button>Customer</button>
             </a>
         </div>

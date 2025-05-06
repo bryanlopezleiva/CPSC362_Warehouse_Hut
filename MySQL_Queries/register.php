@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$companyName, $email]);
     
     if ($stmt->rowCount() > 0) {
-        echo "An account with this company name or email already exists.";
+        echo "An account with this company name or email already exists. ";
         echo '<a href="../create_account.php">Go back to registration page</a>';
         exit;
     }
@@ -31,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare("INSERT INTO company (companyName, companyEmail, password, phoneNum, storeType) VALUES (?, ?, ?, ?, ?)");
     if ($stmt->execute([$companyName, $email, $hashedPassword, $phoneNum, $storeType])) {
         echo "Account created successfully.";
-        header("Location: ../company_login.php");
+        header("Location: ../Company_Side/company_login.php");
         exit;
     } else {
         echo "Error: ". $stmt->error;
-		echo '<a href="create_account.php">Go back to registration page</a>';
+		echo '<a href="../Company_Side/create_account.php">Go back to registration page</a>';
     }
 }
 ?>

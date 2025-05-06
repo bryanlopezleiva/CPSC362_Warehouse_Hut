@@ -113,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="Furniture">Furniture</option>
                 <option value="Clothing">Clothing</option>
                 <option value="Tools">Tools</option>
+				<option value="Toys">Toys</option>
             </select><br>
 
             <label for="price">Total Price:</label>

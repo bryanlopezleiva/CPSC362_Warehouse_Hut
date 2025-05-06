@@ -82,6 +82,9 @@ if (isset($_SESSION['companyID'])) {
                              "Price Per Unit: $ ". htmlspecialchars(number_format($pricePerUnit, 2)). "<br>".
                              "Quantity: ". htmlspecialchars($row["stockQuantity"]). "<br>".
                              "Date Stocked: ". htmlspecialchars($row["stockDate"]).
+							 "<div class='actions'>".
+								"<button onclick='updateProduct(".htmlspecialchars($row["productsID"] ?? ''). ")'>Update</button>".
+								"</div>".
                              "</div>";
                     }
                 } else {
